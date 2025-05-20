@@ -40,9 +40,11 @@ public class ExcelWriter {
                 else if (rand[j] instanceof Integer)
                     cell.setCellValue((Integer) rand[j]);
 
-                // Stil antet
-                if (i == 0)
-                    cell.setCellStyle(headerStyle);
+                if (i == 0) {
+                    cell.setCellStyle(headerStyle); // Stil antet
+                } else if (j >= 2 && j <= 5) {
+                    cell.setCellStyle(yellowStyle); // Stil pentru note
+                }
             }
 
             // Calculeaza Max si Average doar pentru randurile cu date
